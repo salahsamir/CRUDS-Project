@@ -1,6 +1,7 @@
-import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import {  Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ReactNode } from 'react'
+
 
 
 
@@ -35,10 +36,9 @@ function Model({isOpen,closeModel,title,children}:IModel) {
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="max-w-lg space-y-4 bg-white p-12 rounded-lg"
               >
-                <DialogTitle className="text-3xl">{title}</DialogTitle>
-                <Description>This will permanently deactivate your account</Description>
-                <p>Are you sure you want to deactivate your account? All of your data will be permanently removed.</p>
-                <div className="flex gap-4">
+                <DialogTitle className="text-3xl text-sky-600 hover:text-slate-800">{title}</DialogTitle>
+                
+                <div className="">
                   {children}
                 
                 </div>

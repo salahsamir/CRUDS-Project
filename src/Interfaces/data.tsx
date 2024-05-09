@@ -13,3 +13,13 @@ export interface IData{
         image:string
     }
 }
+
+export interface IInput{
+    name:string;
+    id:string;
+    type:string;
+    labal:string;
+    required?:boolean
+    
+
+}
