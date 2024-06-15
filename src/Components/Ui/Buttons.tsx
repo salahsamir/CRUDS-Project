@@ -1,17 +1,24 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
 
-interface IAlerts extends ButtonHTMLAttributes<HTMLButtonElement> {
-   bgColor?: string;
-   children:ReactNode,
-   width?:"w-full "|'w-fit'
+import { motion } from "framer-motion"
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  
+    bgColor: string
+    children: React.ReactNode,
+    width:'w-full'|'w-fit'
+
 
 }
-function Buttons({bgColor,children,width,...rest}: IAlerts) {
+function Buttons({children,width="w-full", bgColor, ...rest}: IButton ) {
   return (
-  <>
-  <button className={`${bgColor} ${width} text-white w-full font-bold py-2 px-4 rounded-xl hover:text-gray-900`} {...rest}>{children}</button>
-  
-  </>
+    <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    className={`${bgColor} ${width} max-w-sm px-2 py-2 text-white hover:text-black font-bold rounded-md`}
+     {...rest}
+  >
+
+    {children}
+  </motion.button>
   )
 }
 
